@@ -64,16 +64,25 @@
             border: rgba(128, 128, 128, 100%) solid 5px;
             background: rgba(128, 128, 128, 0);
         }
+
+        #m-button{
+            user-select: none;
+        }
     </style>
 </head>
 <body>
 <div id="container">
-    <div id="result"><strong id="result-item">null</strong></div>
+    <div id="result"><strong id="result-container">null</strong></div>
     <div id="m-button" onclick="roll()"><strong>点击生成</strong></div>
 </div>
 <script>
+    let mySwitch = false;
     function roll() {
-        document.getElementById('result-item').innerHTML = (Math.floor(Math.random() * 12) + 1).toString();
+        let myDiv=
+        document.getElementById('result-container');
+        mySwitch = !mySwitch;
+        myDiv.style.color = mySwitch ? '#000000' : '#AAAAAA';
+        myDiv.innerHTML = (Math.floor(Math.random() * 12) + 1).toString();
     }
 </script>
 </body>
